@@ -1,0 +1,1 @@
+console.log("ssa en un webpack config")
