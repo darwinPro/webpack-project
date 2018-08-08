@@ -1,5 +1,6 @@
 import './estilos.css'
-import {firsrMessage} from './message.js';
+import {firsrMessage, delayedMessage} from './message.js';
 
 document.write(firsrMessage)
+delayedMessage()
 console.log("ssa en un webpack config")
