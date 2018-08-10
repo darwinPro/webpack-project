@@ -52,6 +52,30 @@ module.exports = {
                     //fallback: 'style-loader',
                     use: ["css-loader", "sass-loader"]
                 }),
+            },
+            {
+                //que tipo ed archivo quiero reconocer
+                test: /\.styl$/,
+                //que loader se va a encargar del archivo
+                use: ExtractTextPlugin.extract({
+                    //['style-loader','css-loader']
+                    //fallback: 'style-loader',
+                    use: [
+                        "css-loader",
+                        {
+                            loader: 'stylus-loader',
+                            options: {
+                                use: [
+                                    require('nib'),
+                                    require('rupture')
+                                ],
+                                import : [
+                                    '~nib/lib/nib/index.styl',
+                                    '~rupture/rupture/index.styl'
+                                ]
+                            }
+                        }]
+                }),
             }
         ]
     },
